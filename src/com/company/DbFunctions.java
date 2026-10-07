@@ -62,4 +62,22 @@ public class DbFunctions
             System.out.println(e);
         }
     }
+    public void search_by_name(Connection conn, String table_name, String name){
+        Statement statement;
+        ResultSet rs = null;
+        try {
+            String query = String.format("select * from %s  where name = '%s'", table_name, name);
+            statement = conn.createStatement();
+            rs =  statement.executeQuery(query);
+            while (rs.next()){
+                System.out.println(rs.getString("empid")+" ");
+                System.out.println(rs.getString("name")+" ");
+ //               System.out.println(rs.getString("address"));
+
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
