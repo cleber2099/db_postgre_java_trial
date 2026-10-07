@@ -10,6 +10,8 @@ public class Main {
         Connection conn = db.connect_to_db("tutdb", "postgres","123456789");
 
         //db.createTable(conn, "employee");
-        db.insert_row(conn, "employee", "Cléber","Brasil");
+        //db.insert_row(conn, "employee", "André","Brasil");
+        db.read_data(conn, "employee");
+
     }
 }
