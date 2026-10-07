@@ -10,8 +10,10 @@ public class Main {
         Connection conn =db.connect_to_db("tutdb", "postgres","123456789");
 
         //db.insert_row(conn, "employee", "cleber2", "china");
-        //db.read_data(conn, "employee");
+        db.read_data(conn, "employee");
+        db.delete_row_by_id(conn,"employee", 1);
+        db.read_data(conn, "employee");
 
-        db.search_by_name(conn,"employee","cleber2");
+        //db.search_by_name(conn,"employee","cleber2");
     }
 }
